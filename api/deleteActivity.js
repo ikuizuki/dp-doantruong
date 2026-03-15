@@ -1,4 +1,4 @@
-async function deleteActivity(id) {
+async function deleteActivityapi(id) {
   if (!confirm("Bạn chắc chắn muốn xoá hoạt động này?")) return;
 
   const card = document.getElementById(`activity-${id}`);

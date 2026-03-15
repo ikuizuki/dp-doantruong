@@ -139,7 +139,7 @@ function editActivity(id) {
 async function deleteActivity(id) {
   if (!confirm("Bạn chắc chắn muốn xoá hoạt động này?")) return;
 
-  await fetch("/api/deleteActivity", {
+  await fetch("/api/deleteActivityapi", {
     method: "POST",
 
     headers: { "Content-Type": "application/json" },
