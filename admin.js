@@ -1,5 +1,9 @@
+if (localStorage.getItem("admin") !== "true") {
+  window.location.href = "/login.html";
+}
 let activities = [];
 let editId = null;
+
 // convert
 function toBase64(file) {
   return new Promise((resolve, reject) => {
@@ -166,6 +170,11 @@ function clearForm() {
   document.getElementById("description").value = "";
 
   document.getElementById("preview").style.display = "none";
+}
+
+function logout() {
+  localStorage.removeItem("admin");
+  window.location.href = "/login.html";
 }
 
 /* INIT */
