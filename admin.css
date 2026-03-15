@@ -1,0 +1,74 @@
+body {
+  font-family: Arial;
+
+  background: #f4f6fb;
+
+  margin: 0;
+}
+
+.admin-container {
+  max-width: 900px;
+
+  margin: auto;
+
+  padding: 40px;
+}
+
+.admin-card {
+  background: white;
+
+  padding: 25px;
+
+  margin-bottom: 30px;
+
+  border-radius: 12px;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+input,
+textarea {
+  width: 100%;
+
+  padding: 10px;
+
+  margin-bottom: 10px;
+
+  border: 1px solid #ddd;
+
+  border-radius: 6px;
+}
+
+button {
+  background: #0b63c7;
+
+  color: white;
+
+  border: none;
+
+  padding: 10px 20px;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+}
+
+button:hover {
+  background: #084a96;
+}
+
+.activity-item {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 10px;
+
+  border-bottom: 1px solid #eee;
+}
+
+.delete-btn {
+  background: red;
+}

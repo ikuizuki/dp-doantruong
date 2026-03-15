@@ -1,65 +1,38 @@
 <!doctype html>
-<html>
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="admin.css" />
   </head>
 
   <body>
-    <h2>Admin Dashboard</h2>
+    <div class="admin-container">
+      <h1>Admin Dashboard</h1>
 
-    <input id="title" placeholder="Tên hoạt động" />
+      <div class="admin-card">
+        <h2>Thêm hoạt động</h2>
 
-    <input id="date" placeholder="Ngày" />
+        <input id="title" placeholder="Tên hoạt động" />
 
-    <input id="location" placeholder="Địa điểm" />
+        <input id="date" type="date" />
 
-    <textarea id="description"></textarea>
+        <input id="location" placeholder="Địa điểm" />
 
-    <br /><br />
+        <textarea id="description" placeholder="Mô tả hoạt động"></textarea>
 
-    <button onclick="addActivity()">Đăng hoạt động</button>
+        <input type="file" id="image" />
 
-    <br /><br />
+        <button onclick="addActivity()">Đăng hoạt động</button>
+      </div>
 
-    <input type="file" id="image" />
+      <div class="admin-card">
+        <h2>Danh sách hoạt động</h2>
 
-    <button onclick="uploadImage()">Upload ảnh</button>
+        <div id="activity-list"></div>
+      </div>
+    </div>
 
-    <script>
-      async function addActivity() {
-        await fetch("/api/addActivity", {
-          method: "POST",
-
-          headers: {
-            "Content-Type": "application/json",
-          },
-
-          body: JSON.stringify({
-            title: document.getElementById("title").value,
-            date: document.getElementById("date").value,
-            location: document.getElementById("location").value,
-            description: document.getElementById("description").value,
-          }),
-        });
-
-        alert("Đăng thành công");
-      }
-
-      async function uploadImage() {
-        const file = document.getElementById("image").files[0];
-
-        const form = new FormData();
-
-        form.append("image", file);
-
-        await fetch("/api/upload", {
-          method: "POST",
-          body: form,
-        });
-
-        alert("Upload thành công");
-      }
-    </script>
+    <script src="admin.js"></script>
   </body>
 </html>
