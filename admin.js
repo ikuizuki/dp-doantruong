@@ -73,6 +73,11 @@ function renderAdminList() {
 /* ADD OR UPDATE */
 
 async function addActivity() {
+  const btn = document.getElementById("submitBtn");
+
+  btn.innerText = "Đang đăng tải...";
+  btn.disabled = true;
+
   const title = document.getElementById("title").value;
   const date = document.getElementById("date").value;
   const location = document.getElementById("location").value;
@@ -108,6 +113,9 @@ async function addActivity() {
 
   clearForm();
   loadAdminActivities();
+
+  btn.innerText = "Đăng hoạt động";
+  btn.disabled = false;
 }
 
 /* EDIT */

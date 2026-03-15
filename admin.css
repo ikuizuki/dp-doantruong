@@ -89,3 +89,17 @@ button:hover {
 
   transition: 0.3s;
 }
+#submitBtn {
+  background: #1976d2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#submitBtn:disabled {
+  background: gray;
+  cursor: not-allowed;
+}
