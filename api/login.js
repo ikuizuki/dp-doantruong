@@ -5,7 +5,7 @@ export default async function handler(req, res) {
 
   const { username, password } = req.body;
 
-  if (username === "admin" && password === "123456") {
+  if (username === "admin" && password === "dp2007") {
     res.json({ success: true });
   } else {
     res.json({ success: false });
