@@ -82,3 +82,10 @@ button:hover {
 .edit-btn {
   background: #ff9800;
 }
+.fade-out {
+  opacity: 0;
+
+  transform: scale(0.8);
+
+  transition: 0.3s;
+}

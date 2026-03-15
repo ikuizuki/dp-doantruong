@@ -41,7 +41,7 @@ function renderAdminList() {
   activities.forEach((a) => {
     div.innerHTML += `
 
-<div class="activity-item">
+<div class="activity-item" id="activity-${a._id}">
 
 <span class="activity-title">${a.title}</span>
 
