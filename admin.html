@@ -1,20 +1,65 @@
-<h1>Admin đăng hoạt động</h1>
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin Dashboard</title>
+  </head>
 
-<input id="username" placeholder="username" />
-<input id="password" placeholder="password" type="password" />
+  <body>
+    <h2>Admin Dashboard</h2>
 
-<button onclick="login()">Đăng nhập</button>
+    <input id="title" placeholder="Tên hoạt động" />
 
-<div id="panel" style="display: none">
-  <h2>Thêm hoạt động</h2>
+    <input id="date" placeholder="Ngày" />
 
-  <input id="title" placeholder="Tên hoạt động" />
-  <input id="date" placeholder="Ngày" />
-  <input id="location" placeholder="Địa điểm" />
+    <input id="location" placeholder="Địa điểm" />
 
-  <textarea id="description"></textarea>
+    <textarea id="description"></textarea>
 
-  <button onclick="add()">Đăng</button>
-</div>
+    <br /><br />
 
-<script src="script.js"></script>
+    <button onclick="addActivity()">Đăng hoạt động</button>
+
+    <br /><br />
+
+    <input type="file" id="image" />
+
+    <button onclick="uploadImage()">Upload ảnh</button>
+
+    <script>
+      async function addActivity() {
+        await fetch("/api/addActivity", {
+          method: "POST",
+
+          headers: {
+            "Content-Type": "application/json",
+          },
+
+          body: JSON.stringify({
+            title: document.getElementById("title").value,
+            date: document.getElementById("date").value,
+            location: document.getElementById("location").value,
+            description: document.getElementById("description").value,
+          }),
+        });
+
+        alert("Đăng thành công");
+      }
+
+      async function uploadImage() {
+        const file = document.getElementById("image").files[0];
+
+        const form = new FormData();
+
+        form.append("image", file);
+
+        await fetch("/api/upload", {
+          method: "POST",
+          body: form,
+        });
+
+        alert("Upload thành công");
+      }
+    </script>
+  </body>
+</html>

@@ -3,15 +3,66 @@
   <head>
     <meta charset="UTF-8" />
     <title>Đoàn Trường</title>
+
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <h1>Trang thông tin Đoàn Trường</h1>
+    <header class="header">
+      <div class="logo">
+        <img src="logo.png" />
+        <h1>ĐOÀN TRƯỜNG</h1>
+      </div>
 
-    <h2>Hoạt động</h2>
+      <div class="header-search">
+        <input type="text" id="searchInput" placeholder="🔎 Tìm hoạt động..." />
+      </div>
 
-    <div id="activities"></div>
+      <nav>
+        <a href="#">Trang chủ</a>
+        <a href="#">Hoạt động</a>
+        <a href="#">Timeline</a>
+        <a href="#">Admin</a>
+      </nav>
+    </header>
+
+    <!-- BANNER SLIDESHOW -->
+
+    <section class="banner">
+      <div class="banner-overlay">
+        <h2>Trang thông tin Đoàn Thanh Niên</h2>
+
+        <p>Cập nhật các hoạt động mới nhất</p>
+      </div>
+    </section>
+
+    <!-- THÔNG BÁO -->
+
+    <section class="announcement">
+      <h2>📢 Thông báo nổi bật</h2>
+
+      <div id="announcement-list"></div>
+    </section>
+
+    <!-- HOẠT ĐỘNG -->
+
+    <section id="activities" class="activities">
+      <h2>Hoạt động</h2>
+
+      <div id="activities-list" class="activity-grid"></div>
+    </section>
+
+    <!-- TIMELINE -->
+
+    <section id="timeline" class="timeline">
+      <h2>Lịch sử hoạt động</h2>
+
+      <div id="timeline-list"></div>
+    </section>
+
+    <footer>
+      <p>Đoàn Thanh Niên</p>
+    </footer>
 
     <script src="script.js"></script>
   </body>
