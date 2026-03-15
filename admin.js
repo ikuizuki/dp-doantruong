@@ -1,6 +1,17 @@
 let activities = [];
 let editId = null;
+// convert
+function toBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
 
+    reader.readAsDataURL(file);
+
+    reader.onload = () => resolve(reader.result);
+
+    reader.onerror = (error) => reject(error);
+  });
+}
 /* PREVIEW IMAGE */
 
 document.getElementById("image").addEventListener("change", function () {
@@ -63,23 +74,26 @@ function renderAdminList() {
 
 async function addActivity() {
   const title = document.getElementById("title").value;
-
   const date = document.getElementById("date").value;
-
   const location = document.getElementById("location").value;
-
   const description = document.getElementById("description").value;
 
-  const body = { title, date, location, description };
+  const file = document.getElementById("image").files[0];
+
+  let image = "";
+
+  if (file) {
+    image = await toBase64(file);
+  }
+
+  const body = { title, date, location, description, image };
 
   if (editId) {
     body.id = editId;
 
     await fetch("/api/updateActivity", {
       method: "POST",
-
       headers: { "Content-Type": "application/json" },
-
       body: JSON.stringify(body),
     });
 
@@ -87,15 +101,12 @@ async function addActivity() {
   } else {
     await fetch("/api/addActivity", {
       method: "POST",
-
       headers: { "Content-Type": "application/json" },
-
       body: JSON.stringify(body),
     });
   }
 
   clearForm();
-
   loadAdminActivities();
 }
 

@@ -16,15 +16,24 @@ function renderActivities(list) {
 
   list.forEach((a) => {
     div.innerHTML += `
-<div class="card">
+<div class="activity-card">
 
-<h3>${a.title}</h3>
+<div class="activity-left">
 
-<p><b>Ngày:</b> ${a.date}</p>
+<h2 class="activity-title">${a.title}</h2>
 
-<p><b>Địa điểm:</b> ${a.location}</p>
+<div class="activity-info">
+<span>📅 ${a.date}</span>
+<span>📍 ${a.location}</span>
+</div>
 
-<p>${a.description}</p>
+<p class="activity-desc">
+${a.description}
+</p>
+
+</div>
+
+${a.image ? `<img src="${a.image}" class="activity-img">` : ""}
 
 </div>
 `;
