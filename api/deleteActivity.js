@@ -1,19 +1,15 @@
-async function deleteActivityapi(id) {
-  if (!confirm("Bạn chắc chắn muốn xoá hoạt động này?")) return;
+import clientPromise from "../server.js";
+import { ObjectId } from "mongodb";
 
-  const card = document.getElementById(`activity-${id}`);
+export default async function handler(req, res) {
+  const { id } = req.body;
 
-  card.classList.add("fade-out");
+  const client = await clientPromise;
+  const db = client.db("chidoan");
 
-  setTimeout(async () => {
-    await fetch("/api/deleteActivity", {
-      method: "POST",
+  await db.collection("activities").deleteOne({
+    _id: new ObjectId(id),
+  });
 
-      headers: { "Content-Type": "application/json" },
-
-      body: JSON.stringify({ id }),
-    });
-
-    card.remove();
-  }, 300);
+  res.json({ success: true });
 }
