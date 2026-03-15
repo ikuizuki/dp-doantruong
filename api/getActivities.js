@@ -1,4 +1,4 @@
-import clientPromise from "./sever.js";
+import clientPromise from "../server.js";
 
 export default async function handler(req, res) {
   const client = await clientPromise;
