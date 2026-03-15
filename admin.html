@@ -11,7 +11,7 @@
       <h1>Admin Dashboard</h1>
 
       <div class="admin-card">
-        <h2>Thêm hoạt động</h2>
+        <h2>Thêm / Sửa hoạt động</h2>
 
         <input id="title" placeholder="Tên hoạt động" />
 
@@ -19,9 +19,14 @@
 
         <input id="location" placeholder="Địa điểm" />
 
-        <textarea id="description" placeholder="Mô tả hoạt động"></textarea>
+        <textarea id="description" placeholder="Mô tả"></textarea>
 
         <input type="file" id="image" />
+
+        <img
+          id="preview"
+          style="width: 150px; margin-top: 10px; display: none"
+        />
 
         <button onclick="addActivity()">Đăng hoạt động</button>
       </div>
