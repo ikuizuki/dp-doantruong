@@ -1,25 +1,15 @@
-const { MongoClient, ServerApiVersion } = require("mongodb");
-/* DATABASE */
-const URL_mongo = process.env.URL_mongo;
-const client = new MongoClient(URL_mongo, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  },
-});
+import { MongoClient } from "mongodb";
 
-let playersCollection;
-/* CONNECT DATABASE */
-async function connectDB() {
-  try {
-    await client.connect();
-    console.log("✅ Connected to MongoDB");
+const uri = process.env.URL_mongo;
 
-    const db = client.db();
-    playersCollection = db.collection("user");
-  } catch (error) {
-    console.error("❌ DB Connection Error:", error);
-    process.exit(1);
-  }
+let client;
+let clientPromise;
+
+if (!process.env.URL_mongo) {
+  throw new Error("Missing Mongo URI");
 }
+
+client = new MongoClient(uri);
+clientPromise = client.connect();
+
+export default clientPromise;
