@@ -54,7 +54,7 @@ function renderTimeline(list) {
 
 <div class="timeline-item">
 
-<div class="timeline-date">${a.date}</div>
+<div class="timeline-date"> date:${a.date}</div>
 
 <div class="timeline-content">
 
