@@ -152,7 +152,6 @@ async function deleteActivity(id) {
 
     card.remove();
   }, 300);
-  loadAdminActivities();
 }
 
 /* CLEAR FORM */
