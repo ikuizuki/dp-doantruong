@@ -1,5 +1,11 @@
-body {
+/* RESET CHUẨN */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: Arial;
   background: #f5f5f5;
 }
@@ -8,8 +14,12 @@ body {
 .header {
   position: relative;
   height: 200px;
-  background: url("../pic/background1.jpg") center/cover;
-  text-align: center;
+  background: url("../pic/background1.jpg") center/cover no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 👈 FIX khoảng trắng */
+  align-items: center;
 }
 
 /* LOGO */
@@ -43,7 +53,9 @@ body {
 
 /* TITLE */
 .header h1 {
-  margin-top: 80px;
+  margin: 0; /* 👈 QUAN TRỌNG */
+  color: white;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
 }
 
 /* MENU */
@@ -81,7 +93,7 @@ body {
   border-radius: 10px;
 }
 
-/* NEWS CARD */
+/* NEWS */
 .news-row {
   display: flex;
   gap: 15px;
@@ -118,7 +130,7 @@ body {
   overflow: hidden;
 }
 
-/* hover xịn */
+/* hover */
 .news-row:hover {
   transform: translateY(-3px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -135,4 +147,66 @@ footer {
   color: white;
   text-align: center;
   padding: 20px;
+}
+/* KHỐI TOP */
+.top-news {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+/* tin lớn bên trái */
+.big-news {
+  display: flex;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+/* ảnh tin lớn */
+.big-news img {
+  width: 350px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* 2 tin nhỏ bên phải */
+.side-news {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.small-news {
+  display: flex;
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.small-news img {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* PHẦN DƯỚI */
+.bottom-news {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+}
+
+/* bên trái nhỏ */
+.left-list .news-row {
+  transform: scale(0.95);
+}
+
+/* bên phải to hơn */
+.right-list .news-row img {
+  width: 300px;
+  height: 180px;
 }

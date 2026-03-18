@@ -43,28 +43,80 @@ function renderActivities(list) {
 
   let html = "";
 
-  list.forEach((a, index) => {
-    html += `
-      <a href="../html/detail.html?id=${index}" style="text-decoration:none;color:black">
-        <div class="news-row">
-          <img src="${a.image}" onerror="this.src='../pic/default.jpg'">
+  if (list.length === 0) {
+    container.innerHTML = "<p>Không có dữ liệu</p>";
+    return;
+  }
 
-          <div class="news-content">
-            <h2>${a.title}</h2>
+  // ⭐ TOP 3
+  html += `
+    <div class="top-news">
 
-            <div class="meta">
-              <span>📅 ${a.date || ""}</span>
-              <span>📍 ${a.location || ""}</span>
-            </div>
-
-            <p>${a.description || ""}</p>
+      <!-- BIG -->
+      <div class="big-news">
+        <img src="${list[0].image}">
+        <div class="news-content">
+          <h2>${list[0].title}</h2>
+          <div class="meta">
+            📅 ${list[0].date || ""}
           </div>
+          <p>${list[0].description || ""}</p>
         </div>
-      </a>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="side-news">
+  `;
+
+  for (let i = 1; i <= 2 && i < list.length; i++) {
+    html += `
+      <div class="small-news">
+        <img src="${list[i].image}">
+        <div class="news-content">
+          <h3>${list[i].title}</h3>
+        </div>
+      </div>
     `;
-  });
+  }
+
+  html += `</div></div>`;
+
+  // ⭐ PHẦN DƯỚI
+  html += `<div class="bottom-news">`;
+
+  html += `<div class="left-list">`;
+  for (let i = 3; i < list.length; i += 2) {
+    html += createNewsRow(list[i], i);
+  }
+  html += `</div>`;
+
+  html += `<div class="right-list">`;
+  for (let i = 4; i < list.length; i += 2) {
+    html += createNewsRow(list[i], i);
+  }
+  html += `</div>`;
+
+  html += `</div>`;
 
   container.innerHTML = html;
+}
+
+// component tái sử dụng
+function createNewsRow(a, index) {
+  return `
+    <a href="../html/detail.html?id=${index}" style="text-decoration:none;color:black">
+      <div class="news-row">
+        <img src="${a.image}">
+        <div class="news-content">
+          <h2>${a.title}</h2>
+          <div class="meta">
+            📅 ${a.date || ""}
+          </div>
+          <p>${a.description || ""}</p>
+        </div>
+      </div>
+    </a>
+  `;
 }
 
 loadActivities();
