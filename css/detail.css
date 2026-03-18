@@ -91,12 +91,18 @@ body {
 }
 
 /* IMAGE */
-.detail-img {
+.detail-img-wrapper {
   width: 100%;
+  height: 400px;
+  overflow: hidden;
   border-radius: 10px;
-  margin: 20px 0;
 }
 
+.detail-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 /* TEXT */
 .detail-desc {
   font-size: 17px;
