@@ -1,0 +1,135 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+.header {
+  position: relative;
+  height: 200px;
+  background: url("../pic/background1.jpg") no-repeat center;
+  background-size: cover;
+  color: #222;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* LOGO */
+.logo-group {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.logo-group img {
+  width: 60px;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* TITLE */
+.header h1 {
+  margin-top: 80px;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+/* MENU */
+.menu {
+  position: absolute;
+  bottom: 17%;
+  right: 10%; /* 👈 đẩy qua phải */
+  display: flex;
+  gap: 40px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #222;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  background: #00264d;
+  color: white;
+  text-align: center;
+  padding: 25px;
+  margin-top: 40px;
+}
+
+/* Chữ bên phải */
+.text {
+  margin-left: 15px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.desc {
+  margin-top: 8px;
+  color: #555;
+}
+
+.activity-desc {
+  display: -webkit-box;
+
+  -webkit-line-clamp: 3; /* Chrome, Edge */
+  line-clamp: 3; /* chuẩn (nhưng chưa hỗ trợ rộng) */
+
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.activity-card {
+  width: 50%;
+  display: flex; /* QUAN TRỌNG */
+  align-items: flex-start;
+  background: white;
+  margin: 15px 0;
+  margin-left: 17%;
+  border-radius: 8px;
+  padding-bottom: 10px 0;
+  border-bottom: 1px solid #ddd; /* 👈 đường kẻ mờ */
+}
+
+/* Ảnh bên trái */
+.activity-img {
+  width: 220px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 6px;
+  padding-right: 10px;
+}
+
+/* Phần chữ bên phải */
+.activity-right {
+  flex: 1;
+  margin-left: 10px;
+}
+
+.activity-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.activity-info {
+  font-size: 14px;
+  color: gray;
+  margin: 5px 0;
+}
+/* bỏ gạch cuối */
+.activity-card:last-child {
+  border-bottom: none;
+}
+.activity-link {
+  text-decoration: none;
+  color: inherit;
+}
