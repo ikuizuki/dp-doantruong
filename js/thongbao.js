@@ -29,64 +29,27 @@ async function loadActivities() {
   renderActivities(activities);
 }
 function renderActivities(list) {
-  if (!list || list.length === 0) return;
+  const container = document.getElementById("news-list");
+  container.innerHTML = "";
 
-  // ⭐ 1. Tin nổi bật
-  const f = list[0];
-  document.getElementById("featured-news").innerHTML = `
-    <div class="featured">
-      <img src="${f.image}">
-      <h1>${f.title}</h1>
-    </div>
-  `;
+  list.forEach((a, index) => {
+    container.innerHTML += `
+      <a href="../html/detail.html?id=${index}" style="text-decoration:none; color:black;">
+        <div class="news-row">
+          <img src="${a.image}">
+          <div class="news-content">
+            <h2>${a.title}</h2>
 
-  // 📰 2. Tin lớn
-  const m = list[1];
-  document.getElementById("main-news").innerHTML = `
-    <div class="main-news">
-      <img src="${m.image}">
-      <h2>${m.title}</h2>
-      <p>${m.description || ""}</p>
-    </div>
-  `;
+            <div class="meta">
+              <span>📅 ${a.date || ""}</span>
+              <span>📍 ${a.location || ""}</span>
+            </div>
 
-  // 📌 3. Tin nhỏ
-  let side = "";
-  list.slice(2, 5).forEach((a) => {
-    side += `
-      <div class="side-news-item">
-        <img src="${a.image}">
-        <p>${a.title}</p>
-      </div>
-    `;
-  });
-  document.getElementById("side-news").innerHTML = side;
-
-  // 📚 4. Danh sách dài
-  let news = "";
-  list.slice(5).forEach((a) => {
-    news += `
-      <div class="news-item">
-        <img src="${a.image}">
-        <div>
-          <h3>${a.title}</h3>
-          <p>${a.description || ""}</p>
+            <p>${a.description || ""}</p>
+          </div>
         </div>
-      </div>
+      </a>
     `;
   });
-  document.getElementById("news-list").innerHTML = news;
-
-  // 🔥 5. Cột phải (Xem nhiều)
-  let hot = "";
-  list.slice(0, 5).forEach((a) => {
-    hot += `
-      <div class="hot-item">
-        <img src="${a.image}">
-        <p>${a.title}</p>
-      </div>
-    `;
-  });
-  document.getElementById("hot-news").innerHTML = hot;
 }
 loadActivities();
