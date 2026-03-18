@@ -173,7 +173,7 @@ function clearForm() {
 }
 
 function logout() {
-  localStorage.removeItem("admin");
+  localStorage.removeItem("username");
   window.location.href = "../html/login.html";
 }
 

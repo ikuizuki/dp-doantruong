@@ -12,7 +12,10 @@ if (username === "admin") {
     </a>
   `;
 }
-
+function logout() {
+  localStorage.removeItem("username");
+  window.location.href = "../html/login.html";
+}
 async function loadDetail() {
   const params = new URLSearchParams(window.location.search);
   const id = params.get("id");

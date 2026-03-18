@@ -19,6 +19,6 @@ async function login() {
     localStorage.setItem("username", data.username);
 
     // 👉 chuyển trang
-    window.location.href = "index.html";
+    window.location.href = "dp-doantruong.html";
   }
 }

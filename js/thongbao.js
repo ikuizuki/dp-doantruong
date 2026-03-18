@@ -12,7 +12,10 @@ if (username === "admin") {
     </a>
   `;
 }
-
+function logout() {
+  localStorage.removeItem("username");
+  window.location.href = "../html/login.html";
+}
 async function loadActivities() {
   const res = await fetch("/api/getActivities");
   activities = await res.json();

@@ -12,3 +12,7 @@ if (username === "admin") {
     </a>
   `;
 }
+function logout() {
+  localStorage.removeItem("username");
+  window.location.href = "../html/login.html";
+}
