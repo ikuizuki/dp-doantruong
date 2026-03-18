@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+.header {
+  position: relative;
+  height: 200px;
+  background: url("../pic/background1.jpg") no-repeat center;
+  background-size: cover;
+  color: #222;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* LOGO */
+.logo-group {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.logo-group img {
+  width: 60px;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* TITLE */
+.header h1 {
+  margin-top: 80px;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+/* MENU */
+.menu {
+  position: absolute;
+  bottom: 17%;
+  right: 10%; /* 👈 đẩy qua phải */
+  display: flex;
+  gap: 40px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #222;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  background: #00264d;
+  color: white;
+  text-align: center;
+  padding: 25px;
+  margin-top: 40px;
+}
+.user-box {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 10; /* 👈 QUAN TRỌNG */
+}
+
+.user-box span {
+  font-weight: bold;
+}
+
+.user-box button {
+  padding: 5px 10px;
+  border: none;
+  background: #ff4d4d;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.user-box button:hover {
+  background: #e60000;
+}

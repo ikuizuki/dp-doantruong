@@ -140,6 +140,7 @@ footer {
   display: flex;
   align-items: center;
   gap: 10px;
+  z-index: 10; /* 👈 QUAN TRỌNG */
 }
 
 .user-box span {
