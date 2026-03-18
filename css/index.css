@@ -15,7 +15,7 @@ body {
 }
 .pic-anim {
   position: relative;
-  height: 250px;
+  height: 70%;
 
   display: flex;
   justify-content: center;
