@@ -6,6 +6,15 @@ body {
 /* HEADER */
 .header {
   position: relative;
+  height: 200px;
+  background: url("../pic/background1.jpg") no-repeat center;
+  background-size: cover;
+  color: #222;
+  text-align: center;
+  overflow: hidden;
+}
+#pic-anim {
+  position: relative;
   height: 250px;
 
   display: flex;
@@ -18,19 +27,7 @@ body {
 
   animation: slideBg 12s infinite ease-in-out;
 }
-.header h1 {
-  color: white;
-  font-size: 32px;
-  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
-  z-index: 2;
-}
-.header::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35);
-  z-index: 1;
-}
+
 /* animation chuyển ảnh */
 @keyframes slideBg {
   0% {
