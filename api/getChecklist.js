@@ -12,6 +12,7 @@ export default async function handler(req, res) {
     const checklist = await db
       .collection("checklists")
       .find({ username })
+      .sort({ createdAt: -1 }) // 👈 thêm dòng này
       .toArray();
 
     // 👉 map lại trạng thái

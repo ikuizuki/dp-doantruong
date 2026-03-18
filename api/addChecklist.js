@@ -9,8 +9,13 @@ export default async function handler(req, res) {
 
     await db.collection("checklists").updateOne(
       { username, activityId },
-      { $set: { done } },
-      { upsert: true }, // 👉 chưa có thì tạo
+      {
+        $set: { done }, // cập nhật trạng thái
+        $setOnInsert: {
+          createdAt: new Date(), // 👈 chỉ tạo khi insert mới
+        },
+      },
+      { upsert: true },
     );
 
     res.json({ success: true });
