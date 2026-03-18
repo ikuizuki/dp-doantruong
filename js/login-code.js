@@ -2,7 +2,7 @@ async function login() {
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
 
-  const res = await fetch("/api/login", {
+  const res = await fetch("/api/auth", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -12,11 +12,13 @@ async function login() {
 
   const data = await res.json();
 
-  if (data.success) {
-    localStorage.setItem("admin", "true");
+  document.getElementById("msg").innerText = data.message;
 
-    window.location.href = "/html/admin.html";
-  } else {
-    document.getElementById("error").style.display = "block";
+  if (res.ok) {
+    // 👉 lưu user
+    localStorage.setItem("username", data.username);
+
+    // 👉 chuyển trang
+    window.location.href = "index.html";
   }
 }

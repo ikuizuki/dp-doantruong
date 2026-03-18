@@ -1,4 +1,4 @@
-if (localStorage.getItem("admin") !== "true") {
+if (localStorage.getItem("username") !== "admin") {
   window.location.href = "../html/login.html";
 }
 let activities = [];
