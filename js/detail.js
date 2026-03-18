@@ -16,6 +16,12 @@ function logout() {
   localStorage.removeItem("username");
   window.location.href = "../html/login.html";
 }
+// 👉 hiện xin chào
+const hello = document.getElementById("hello");
+if (hello) {
+  hello.innerText = "Xin chào, " + username;
+}
+
 async function loadDetail() {
   const params = new URLSearchParams(window.location.search);
   const id = params.get("id");

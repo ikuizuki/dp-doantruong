@@ -12,7 +12,14 @@ if (username === "admin") {
     </a>
   `;
 }
+// 👉 hiện xin chào
+const hello = document.getElementById("hello");
+if (hello) {
+  hello.innerText = "Xin chào, " + username;
+}
+
+// 👉 logout
 function logout() {
   localStorage.removeItem("username");
-  window.location.href = "../html/login.html";
+  window.location.href = "login.html";
 }

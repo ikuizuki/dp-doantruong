@@ -63,3 +63,28 @@ footer {
   padding: 25px;
   margin-top: 40px;
 }
+.user-box {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-box span {
+  font-weight: bold;
+}
+
+.user-box button {
+  padding: 5px 10px;
+  border: none;
+  background: #ff4d4d;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.user-box button:hover {
+  background: #e60000;
+}
