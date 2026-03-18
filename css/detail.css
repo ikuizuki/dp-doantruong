@@ -91,7 +91,7 @@ body {
 }
 
 /* IMAGE */
-.detail-img-hot {
+.detail-img-hot img {
   width: 260px;
   height: 160px;
   object-fit: cover;

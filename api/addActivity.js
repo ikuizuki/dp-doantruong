@@ -16,6 +16,7 @@ export default async function handler(req, res) {
     description,
     location,
     image,
+    createdAt: new Date(), // 👈 BẮT BUỘC PHẢI CÓ
   });
 
   res.json({ success: true });
