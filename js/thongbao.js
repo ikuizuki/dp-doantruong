@@ -50,6 +50,7 @@ function renderActivities(list) {
 
   // ⭐ TOP 3
   html += `
+  <a href="../html/detail.html?id=${1}" style="text-decoration:none;color:black">
     <div class="top-news">
 
       <!-- BIG -->
@@ -66,16 +67,19 @@ function renderActivities(list) {
 
       <!-- RIGHT -->
       <div class="side-news">
+  </a>
   `;
 
   for (let i = 1; i <= 2 && i < list.length; i++) {
     html += `
+    <a href="../html/detail.html?id=${i}" style="text-decoration:none;color:black">
       <div class="small-news">
         <img src="${list[i].image}">
         <div class="news-content">
           <h3>${list[i].title}</h3>
         </div>
       </div>
+    </a>
     `;
   }
 

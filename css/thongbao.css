@@ -119,6 +119,8 @@ body {
 }
 
 .meta {
+  display: flex;
+  align-items: center; /* 👈 canh giữa theo chiều dọc */
   font-size: 13px;
   color: gray;
   margin: 5px 0;
@@ -171,6 +173,8 @@ footer {
 
 /* ảnh tin lớn */
 .big-news img {
+  display: flex;
+  align-items: center; /* 👈 canh giữa theo chiều dọc */
   width: 350px;
   height: 220px;
   object-fit: cover;
@@ -192,6 +196,8 @@ footer {
 }
 
 .small-news img {
+  display: flex;
+  align-items: center; /* 👈 canh giữa theo chiều dọc */
   width: 120px;
   height: 80px;
   object-fit: cover;
