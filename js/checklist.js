@@ -21,27 +21,38 @@ const hello = document.getElementById("hello");
 if (hello) {
   hello.innerText = "Xin chào, " + username;
 }
-// 👉 load checklist
+
 async function loadChecklist() {
   const res = await fetch(`/api/getChecklist?username=${username}`);
   const data = await res.json();
 
-  const div = document.getElementById("list");
+  const div = document.getElementById("checklist");
   div.innerHTML = "";
 
-  data.forEach((item) => {
+  data.forEach((a) => {
     div.innerHTML += `
-      <div>
-        <input type="checkbox" ${item.done ? "checked" : ""}>
-        ${item.text}
+      <div class="activity-card">
+        ${a.image ? `<img src="${a.image}" class="activity-img">` : ""}
+
+        <div class="activity-right">
+          <h2>${a.title}</h2>
+          <p>${a.description}</p>
+
+          <!-- ✅ CHECKBOX Ở ĐÂY -->
+          <label>
+            <input type="checkbox"
+              ${a.checked ? "checked" : ""}
+              onchange="toggleCheck('${a._id}', this.checked)">
+            Tham gia
+          </label>
+        </div>
       </div>
     `;
   });
 }
 
-// 👉 thêm việc
-async function addTask() {
-  const text = document.getElementById("task").value;
+async function toggleCheck(activityId, done) {
+  const username = localStorage.getItem("username");
 
   await fetch("/api/addChecklist", {
     method: "POST",
@@ -50,12 +61,10 @@ async function addTask() {
     },
     body: JSON.stringify({
       username,
-      text,
+      activityId,
+      done,
     }),
   });
-
-  document.getElementById("task").value = "";
-  loadChecklist();
 }
 
 loadChecklist();
