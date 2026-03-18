@@ -29,25 +29,52 @@ async function loadActivities() {
   renderActivities(activities);
 }
 function renderActivities(list) {
-  const div = document.getElementById("activities-list");
-  div.innerHTML = "";
+  // 1. Tin nổi bật
+  const featured = list[0];
+  document.getElementById("featured-news").innerHTML = `
+    <div class="featured">
+      <img src="${featured.image}">
+      <h1>${featured.title}</h1>
+    </div>
+  `;
 
-  list.forEach((a, index) => {
-    div.innerHTML += `
-      <a href="../html/detail.html?id=${index}" class="activity-link">
-        <div class="activity-card">
-          ${a.image ? `<img src="${a.image}" class="activity-img">` : ""}
-          <div class="activity-right">
-            <h2 class="activity-title">${a.title}</h2>
-            <div class="activity-info">
-              <span>📅 ${a.date}</span>
-              <span>📍 ${a.location}</span>
-            </div>
-            <p class="activity-desc">${a.description}</p>
+  // 2. Tin lớn bên trái
+  const main = list[1];
+  document.getElementById("main-news").innerHTML = `
+    <div class="main-news">
+      <img src="${main.image}">
+      <h2>${main.title}</h2>
+    </div>
+  `;
+
+  // 3. Tin nhỏ bên phải
+  let sideHTML = "";
+  list.slice(2, 5).forEach((a) => {
+    sideHTML += `
+      <div class="side-news-item">
+        <img src="${a.image}">
+        <p>${a.title}</p>
+      </div>
+    `;
+  });
+  document.getElementById("side-news").innerHTML = sideHTML;
+
+  // 4. Danh sách kéo dài
+  let listHTML = "";
+  list.slice(5).forEach((a, index) => {
+    listHTML += `
+      <a href="../html/detail.html?id=${index}">
+        <div class="news-item">
+          <img src="${a.image}">
+          <div>
+            <h3>${a.title}</h3>
+            <p>${a.description}</p>
           </div>
         </div>
       </a>
     `;
   });
+
+  document.getElementById("news-list").innerHTML = listHTML;
 }
 loadActivities();

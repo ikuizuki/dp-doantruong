@@ -159,3 +159,72 @@ footer {
 .user-box button:hover {
   background: #e60000;
 }
+.news-container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* ⭐ Tin nổi bật */
+.featured {
+  position: relative;
+}
+
+.featured img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.featured h1 {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  font-size: 28px;
+}
+
+/* 🧱 Hàng 2 */
+.top-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* 📰 Tin chính */
+.main-news img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+/* 📌 Tin nhỏ bên phải */
+.side-news-item {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.side-news-item img {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+/* 📚 Danh sách kéo dài */
+#news-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.news-item {
+  display: flex;
+}
+
+.news-item img {
+  width: 120px;
+  height: 80px;
+  margin-right: 10px;
+}
