@@ -76,6 +76,7 @@ body {
   background: white;
   padding: 25px;
   border-radius: 10px;
+  overflow: hidden; /* 🔥 chặn mọi thứ tràn ra */
 }
 
 /* TITLE */
@@ -98,10 +99,14 @@ body {
   border-radius: 8px;
 }
 .detail-img {
-  width: 350px;
-  height: 220px;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: 400px;
   object-fit: cover;
   border-radius: 10px;
+  display: block;
+  margin: 20px auto;
 }
 /* TEXT */
 .detail-desc {
@@ -141,6 +146,7 @@ body {
   height: 60px;
   object-fit: cover;
   border-radius: 6px;
+  flex-shrink: 0;
 }
 
 .related-item:hover h4 {

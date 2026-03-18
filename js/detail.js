@@ -59,7 +59,7 @@ async function loadDetail() {
   data.forEach((item, index) => {
     if (index !== id && relatedHTML.split("related-item").length <= 3) {
       relatedHTML += `
-        <div class="related-item"class="detail-img-hot"
+        <div class="related-item detail-img-hot"
              onclick="location.href='detail.html?id=${index}'">
           <img src="${item.image}" >
           <h4>${item.title}</h4>
