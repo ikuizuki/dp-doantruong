@@ -91,17 +91,13 @@ body {
 }
 
 /* IMAGE */
-.detail-img-wrapper {
-  width: 100%;
-  height: 400px;
-  overflow: hidden;
-  border-radius: 10px;
-}
-
 .detail-img {
-  width: 100%;
-  height: 100%;
+  width: 70%; /* KHÔNG cho full nữa */
+  max-height: 350px; /* giới hạn chiều cao */
   object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  margin: 20px auto; /* căn giữa */
 }
 /* TEXT */
 .detail-desc {

@@ -46,9 +46,8 @@ async function loadDetail() {
       📅 ${a.date || ""} | 📍 ${a.location || ""}
     </div>
 
-    <div class="detail-img-wrapper">
-      <img src="${a.image}" class="detail-img">
-    </div>
+    <img src="${a.image}" class="detail-img"
+         onerror="this.src='../pic/default.jpg'">
 
     <p class="detail-desc">
       ${a.description.replace(/\n/g, "<br>")}
