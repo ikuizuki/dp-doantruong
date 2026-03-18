@@ -7,7 +7,7 @@ async function loadActivities() {
   activities = await res.json();
 
   renderActivities(activities);
-  renderTimeline(activities);
+  renderchecklist(activities);
 }
 
 function renderActivities(list) {
@@ -52,20 +52,20 @@ function searchActivity() {
   renderActivities(filtered);
 }
 
-/* TIMELINE */
+/* checklist */
 
-function renderTimeline(list) {
-  const div = document.getElementById("timeline-list");
+function renderchecklist(list) {
+  const div = document.getElementById("checklist-list");
   div.innerHTML = "";
 
   list.forEach((a) => {
     div.innerHTML += `
 
-<div class="timeline-item">
+<div class="checklist-item">
 
-<div class="timeline-date"> date:${a.date}</div>
+<div class="checklist-date"> date:${a.date}</div>
 
-<div class="timeline-content">
+<div class="checklist-content">
 
 <h4>${a.title}</h4>
 

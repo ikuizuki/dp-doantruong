@@ -205,24 +205,24 @@ nav a:hover {
   border-radius: 5px;
 }
 
-/* TIMELINE */
+/* checklist */
 
-.timeline {
+.checklist {
   padding: 60px 10%;
 }
 
-.timeline-item {
+.checklist-item {
   display: flex;
   margin-bottom: 15px;
 }
 
-.timeline-date {
+.checklist-date {
   width: 120px;
   font-weight: bold;
   color: #007bff;
 }
 
-.timeline-content {
+.checklist-content {
   background: white;
   padding: 10px;
   border-radius: 5px;
