@@ -1,17 +1,15 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: Arial;
+  background: #f5f5f5;
 }
 
 /* HEADER */
 .header {
   position: relative;
   height: 200px;
-  background: url("../pic/background1.jpg") no-repeat center;
-  background-size: cover;
-  color: #222;
+  background: url("../pic/background1.jpg") center/cover;
   text-align: center;
-  overflow: hidden;
 }
 
 /* LOGO */
@@ -25,166 +23,80 @@ body {
 
 .logo-group img {
   width: 60px;
-  height: auto;
   border-radius: 10px;
+}
+
+/* USER */
+.user-box {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.user-box button {
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
 }
 
 /* TITLE */
 .header h1 {
   margin-top: 80px;
-  font-size: 40px;
-  font-weight: bold;
 }
 
 /* MENU */
 .menu {
   position: absolute;
-  bottom: 17%;
-  right: 10%; /* 👈 đẩy qua phải */
+  bottom: 15%;
+  right: 10%;
   display: flex;
-  gap: 40px;
+  gap: 30px;
 }
 
 .menu a {
   text-decoration: none;
   color: #222;
-  font-size: 16px;
-  transition: 0.3s;
 }
 
-.menu a:hover {
+.menu a:hover,
+.menu .active {
   text-decoration: underline;
 }
 
-footer {
-  background: #00264d;
-  color: white;
-  text-align: center;
-  padding: 25px;
-  margin-top: 40px;
-}
-
-/* Chữ bên phải */
-.text {
-  margin-left: 15px;
-}
-
-.title {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.desc {
-  margin-top: 8px;
-  color: #555;
-}
-
-.activity-desc {
-  display: -webkit-box;
-
-  -webkit-line-clamp: 3; /* Chrome, Edge */
-  line-clamp: 3; /* chuẩn (nhưng chưa hỗ trợ rộng) */
-
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-.activity-card {
-  width: 50%;
-  display: flex; /* QUAN TRỌNG */
-  align-items: flex-start;
-  background: white;
-  margin: 15px 0;
-  margin-left: 17%;
-  border-radius: 8px;
-  padding-bottom: 20px 0;
-  border-bottom: 1px solid #ddd; /* 👈 đường kẻ mờ */
-}
-
-/* Ảnh bên trái */
-.activity-img {
-  width: 220px;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 6px;
-  padding-right: 10px;
-}
-
-/* Phần chữ bên phải */
-.activity-right {
-  flex: 1;
-  margin-left: 10px;
-}
-
-.activity-title {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.activity-info {
-  font-size: 14px;
-  color: gray;
-  margin: 5px 0;
-}
-/* bỏ gạch cuối */
-.activity-link:last-child .activity-card {
-  border-bottom: none;
-}
-.activity-link {
-  text-decoration: none;
-  color: inherit;
-}
-.user-box {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  z-index: 10; /* 👈 QUAN TRỌNG */
-}
-
-.user-box span {
-  font-weight: bold;
-}
-
-.user-box button {
-  padding: 5px 10px;
-  border: none;
-  background: #ff4d4d;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.user-box button:hover {
-  background: #e60000;
-}
-.news-container {
-  max-width: 1100px;
-  margin: auto;
-}
-
+/* LAYOUT */
 .container {
   display: grid;
-  grid-template-columns: 3fr 1fr; /* trái to - phải nhỏ */
+  grid-template-columns: 3fr 1fr;
   gap: 20px;
   max-width: 1200px;
-  margin: auto;
+  margin: 20px auto;
 }
 
-/* ⭐ Tin nổi bật */
+/* SIDEBAR */
+.sidebar {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+/* NEWS CARD */
 .news-row {
   display: flex;
   gap: 15px;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
   margin-bottom: 20px;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 15px;
+  transition: 0.3s;
 }
 
 .news-row img {
   width: 260px;
   height: 160px;
   object-fit: cover;
+  border-radius: 8px;
 }
 
 .news-content h2 {
@@ -198,13 +110,29 @@ footer {
   margin: 5px 0;
 }
 
+/* giới hạn chữ */
 .news-content p {
-  margin: 0;
-  color: #444;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-/* hover giống báo */
+/* hover xịn */
+.news-row:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
 .news-row:hover h2 {
   color: #087cce;
-  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* FOOTER */
+footer {
+  background: #00264d;
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
