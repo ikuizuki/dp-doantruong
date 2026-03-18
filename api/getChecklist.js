@@ -7,26 +7,9 @@ export default async function handler(req, res) {
     const client = await clientPromise;
     const db = client.db("chidoan");
 
-    const activities = await db.collection("activities").find({}).toArray();
+    const data = await db.collection("checklists").find({ username }).toArray();
 
-    const checklist = await db
-      .collection("checklists")
-      .find({ username })
-      .toArray();
-
-    // 👉 map lại trạng thái
-    const result = activities.map((a) => {
-      const checked = checklist.find(
-        (c) => c.activityId == a._id.toString() && c.done,
-      );
-
-      return {
-        ...a,
-        checked: !!checked,
-      };
-    });
-
-    res.json(result);
+    res.json(data);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

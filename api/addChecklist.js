@@ -2,18 +2,18 @@ import clientPromise from "../js/server.js";
 
 export default async function handler(req, res) {
   try {
-    const { username, activityId, done } = req.body;
+    const { username, text } = req.body;
 
     const client = await clientPromise;
     const db = client.db("chidoan");
 
-    await db.collection("checklists").updateOne(
-      { username, activityId },
-      { $set: { done } },
-      { upsert: true }, // 👉 chưa có thì tạo
-    );
+    await db.collection("checklists").insertOne({
+      username,
+      text,
+      done: false,
+    });
 
-    res.json({ success: true });
+    res.json({ message: "Đã thêm" });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
