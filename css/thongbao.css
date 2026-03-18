@@ -110,7 +110,9 @@ body {
   object-fit: cover;
   border-radius: 8px;
 }
-
+.news-content {
+  padding-left: 10px;
+}
 .news-content h2 {
   margin: 0;
   font-size: 20px;
@@ -125,7 +127,10 @@ body {
 /* giới hạn chữ */
 .news-content p {
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+
+  -webkit-line-clamp: 2; /* Chrome, Edge */
+  line-clamp: 2; /* chuẩn mới */
+
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
