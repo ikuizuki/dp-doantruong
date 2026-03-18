@@ -46,8 +46,7 @@ async function loadDetail() {
       📅 ${a.date || ""} | 📍 ${a.location || ""}
     </div>
 
-    <img src="${a.image}" class="detail-img"
-         onerror="this.src='../pic/default.jpg'">
+    <img src="${a.image}" class="detail-img">
 
     <p class="detail-desc">
       ${a.description.replace(/\n/g, "<br>")}
@@ -62,8 +61,7 @@ async function loadDetail() {
       relatedHTML += `
         <div class="related-item"class="detail-img-hot"
              onclick="location.href='detail.html?id=${index}'">
-          <img src="${item.image}" 
-               onerror="this.src='../pic/default.jpg'">
+          <img src="${item.image}" >
           <h4>${item.title}</h4>
         </div>
       `;
