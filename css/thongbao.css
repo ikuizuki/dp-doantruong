@@ -126,7 +126,7 @@ footer {
   margin: 5px 0;
 }
 /* bỏ gạch cuối */
-.activity-card:last-child {
+.activity-link:last-child .activity-card {
   border-bottom: none;
 }
 .activity-link {
