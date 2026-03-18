@@ -1,72 +1,43 @@
 <!doctype html>
-<html>
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
-    <title>Đoàn Trường</title>
-
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="icon" type="image/png" href="../pic/favicon.png" />
+    <title>Trạm thông tin số</title>
+    <link rel="stylesheet" href="../css/index.css" />
   </head>
 
   <body>
     <header class="header">
-      <div class="logo">
-        <img src="../pic/logo.png" />
-        <img src="../pic/logo.png" />
-        <img src="../pic/logo.png" />
-        <h1>ĐOÀN TRƯỜNG</h1>
+      <!-- LOGO -->
+      <div class="logo-group">
+        <img src="../pic/logo1.jpg" />
+        <img src="../pic/logo2.jpg" />
+        <img src="../pic/logo3.jpg" style="width: auto; height: 60px" />
       </div>
 
-      <div class="header-search">
-        <input type="text" id="searchInput" placeholder="🔎 Tìm hoạt động..." />
-      </div>
+      <!-- TITLE -->
+      <h1>TRẠM THÔNG TIN SỐ</h1>
 
-      <nav>
-        <a href="#home">Trang chủ</a>
-        <a href="thongbao.html">Thông báo</a>
-        <a href="checklist.html">Check list</a>
-        <a href="login.html">Admin</a>
+      <!-- MENU -->
+      <nav class="menu">
+        <a
+          href="#"
+          style="
+            text-decoration: none;
+            color: #222;
+            font-size: 16px;
+            transition: 0.3s;
+            text-decoration: underline;
+          "
+          >TRANG CHỦ</a
+        >
+        <a href="#">NHẮC NHỞ</a>
+        <a href="#">CHECK LIST</a>
+        <a href="#">BẢNG TIN SỐ</a>
       </nav>
     </header>
-
-    <!-- BANNER SLIDESHOW -->
-
-    <section class="banner">
-      <div class="banner-overlay">
-        <h2>Trang thông tin Đoàn Thanh Niên</h2>
-
-        <p>Cập nhật các hoạt động mới nhất</p>
-      </div>
-    </section>
-
-    <!-- THÔNG BÁO -->
-
-    <section class="announcement">
-      <h2>📢 Thông báo nổi bật</h2>
-
-      <div id="announcement-list"></div>
-    </section>
-
-    <!-- HOẠT ĐỘNG -->
-
-    <section id="activities" class="activities">
-      <h2>Hoạt động</h2>
-
-      <div id="activities-list" class="activity-grid"></div>
-    </section>
-
-    <!-- checklist -->
-
-    <section id="checklist" class="checklist">
-      <h2>Lịch sử hoạt động</h2>
-
-      <div id="checklist-list"></div>
-    </section>
-
     <footer>
-      <p>Đoàn Thanh Niên</p>
+      <p>Trạm Thông Tin Số</p>
     </footer>
-
-    <script src="../js/script.js"></script>
   </body>
 </html>
