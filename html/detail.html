@@ -2,11 +2,51 @@
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
-    <title>Chi tiết</title>
+    <title>Trạm thông tin số</title>
+    <link rel="stylesheet" href="../css/thongbao.css" />
   </head>
+
   <body>
+    <header class="header">
+      <!-- LOGO -->
+      <div class="logo-group">
+        <img src="../pic/logo1.jpg" />
+        <img src="../pic/logo2.jpg" />
+        <img src="../pic/logo3.jpg" style="width: auto; height: 60px" />
+      </div>
+      <div class="user-box" id="user-box">
+        <span id="hello"></span>
+        <button onclick="logout()">Đăng xuất</button>
+      </div>
+
+      <!-- TITLE -->
+      <h1>TRẠM THÔNG TIN SỐ</h1>
+
+      <!-- MENU -->
+      <nav class="menu" id="menu">
+        <a href="dp-doantruong.html">TRANG CHỦ</a>
+        <a
+          href="#"
+          style="
+            text-decoration: none;
+            color: #222;
+            font-size: 16px;
+            transition: 0.3s;
+            text-decoration: underline;
+          "
+          >THÔNG BÁO</a
+        >
+        <a href="checklist.html">CHECK LIST</a>
+        <a href="#">BẢNG TIN SỐ</a>
+      </nav>
+    </header>
+
     <div id="detail"></div>
 
     <script src="detail.js"></script>
+
+    <footer>
+      <p>Trạm Thông Tin Số</p>
+    </footer>
   </body>
 </html>
