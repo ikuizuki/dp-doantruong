@@ -1,3 +1,9 @@
+async function loadActivities() {
+  const res = await fetch("/api/getActivities");
+  activities = await res.json();
+
+  renderActivities(activities);
+}
 function renderActivities(list) {
   const div = document.getElementById("activities-list");
   div.innerHTML = "";
@@ -20,3 +26,4 @@ function renderActivities(list) {
     `;
   });
 }
+loadActivities();
