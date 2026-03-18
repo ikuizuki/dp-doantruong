@@ -166,6 +166,8 @@ footer {
 /* tin lớn bên trái */
 .big-news {
   display: flex;
+  align-items: center; /* 👈 canh giữa theo chiều dọc */
+  display: flex;
   background: white;
   padding: 15px;
   border-radius: 10px;
