@@ -1,5 +1,5 @@
 if (localStorage.getItem("admin") !== "true") {
-  window.location.href = "/login.html";
+  window.location.href = "../html/login.html";
 }
 let activities = [];
 let editId = null;
@@ -174,7 +174,7 @@ function clearForm() {
 
 function logout() {
   localStorage.removeItem("admin");
-  window.location.href = "/login.html";
+  window.location.href = "../html/login.html";
 }
 
 /* INIT */

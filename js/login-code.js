@@ -15,7 +15,7 @@ async function login() {
   if (data.success) {
     localStorage.setItem("admin", "true");
 
-    window.location.href = "/admin.html";
+    window.location.href = "/html/admin.html";
   } else {
     document.getElementById("error").style.display = "block";
   }
