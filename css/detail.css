@@ -91,12 +91,16 @@ body {
 }
 
 /* IMAGE */
-.detail-img {
-  width: 80%;
-  max-height: 450px;
+.detail-img-hot {
+  width: 260px;
+  height: 160px;
   object-fit: cover;
-  display: block;
-  margin: 20px auto; /* căn giữa */
+  border-radius: 8px;
+}
+.detail-img {
+  width: 350px;
+  height: 220px;
+  object-fit: cover;
   border-radius: 10px;
 }
 /* TEXT */
