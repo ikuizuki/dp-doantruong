@@ -36,9 +36,8 @@ async function loadDetail() {
     return;
   }
 
-  // DETAIL
   detailDiv.innerHTML = `
-    <a href="thongbao.html" class="back-btn">← Quay lại</a>
+    <a href="thongbao.html">← Quay lại</a>
 
     <h1 class="detail-title">${a.title}</h1>
 
@@ -53,18 +52,19 @@ async function loadDetail() {
     </p>
   `;
 
-  // RELATED (lấy random 3 bài khác)
+  let count = 0;
   let relatedHTML = "";
 
   data.forEach((item, index) => {
-    if (index !== id && relatedHTML.split("related-item").length <= 3) {
+    if (index !== id && count < 3) {
       relatedHTML += `
-        <div class="related-item detail-img-hot"
+        <div class="related-item"
              onclick="location.href='detail.html?id=${index}'">
-          <img src="${item.image}" >
+          <img src="${item.image}">
           <h4>${item.title}</h4>
         </div>
       `;
+      count++;
     }
   });
 

@@ -2,28 +2,28 @@
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trạm thông tin số</title>
-    <link rel="stylesheet" href="../css/thongbao.css" />
+
+    <link rel="stylesheet" href="../css/detail.css" />
     <link rel="icon" type="image/png" href="../pic/favicon.png" />
   </head>
 
   <body>
     <header class="header">
-      <!-- LOGO -->
       <div class="logo-group">
         <img src="../pic/logo1.jpg" />
         <img src="../pic/logo2.jpg" />
-        <img src="../pic/logo3.jpg" style="width: auto; height: 60px" />
+        <img src="../pic/logo3.jpg" class="logo-big" />
       </div>
-      <div class="user-box" id="user-box">
+
+      <div class="user-box">
         <span id="hello"></span>
         <button onclick="logout()">Đăng xuất</button>
       </div>
 
-      <!-- TITLE -->
       <h1>TRẠM THÔNG TIN SỐ</h1>
 
-      <!-- MENU -->
       <nav class="menu" id="menu">
         <a href="dp-doantruong.html">TRANG CHỦ</a>
         <a href="thongbao.html">THÔNG BÁO</a>
@@ -32,24 +32,21 @@
       </nav>
     </header>
 
-    <!-- MAIN -->
     <div class="container">
-      <!-- LEFT -->
       <div class="main-content">
         <div id="detail"></div>
       </div>
 
-      <!-- RIGHT -->
       <div class="sidebar">
         <h3>Tin liên quan</h3>
         <div id="related"></div>
       </div>
     </div>
 
-    <script src="../js/detail.js"></script>
-
     <footer>
       <p>Trạm Thông Tin Số</p>
     </footer>
+
+    <script src="../js/detail.js"></script>
   </body>
 </html>
