@@ -29,52 +29,64 @@ async function loadActivities() {
   renderActivities(activities);
 }
 function renderActivities(list) {
-  // 1. Tin nổi bật
-  const featured = list[0];
+  if (!list || list.length === 0) return;
+
+  // ⭐ 1. Tin nổi bật
+  const f = list[0];
   document.getElementById("featured-news").innerHTML = `
     <div class="featured">
-      <img src="${featured.image}">
-      <h1>${featured.title}</h1>
+      <img src="${f.image}">
+      <h1>${f.title}</h1>
     </div>
   `;
 
-  // 2. Tin lớn bên trái
-  const main = list[1];
+  // 📰 2. Tin lớn
+  const m = list[1];
   document.getElementById("main-news").innerHTML = `
     <div class="main-news">
-      <img src="${main.image}">
-      <h2>${main.title}</h2>
+      <img src="${m.image}">
+      <h2>${m.title}</h2>
+      <p>${m.description || ""}</p>
     </div>
   `;
 
-  // 3. Tin nhỏ bên phải
-  let sideHTML = "";
+  // 📌 3. Tin nhỏ
+  let side = "";
   list.slice(2, 5).forEach((a) => {
-    sideHTML += `
+    side += `
       <div class="side-news-item">
         <img src="${a.image}">
         <p>${a.title}</p>
       </div>
     `;
   });
-  document.getElementById("side-news").innerHTML = sideHTML;
+  document.getElementById("side-news").innerHTML = side;
 
-  // 4. Danh sách kéo dài
-  let listHTML = "";
-  list.slice(5).forEach((a, index) => {
-    listHTML += `
-      <a href="../html/detail.html?id=${index}">
-        <div class="news-item">
-          <img src="${a.image}">
-          <div>
-            <h3>${a.title}</h3>
-            <p>${a.description}</p>
-          </div>
+  // 📚 4. Danh sách dài
+  let news = "";
+  list.slice(5).forEach((a) => {
+    news += `
+      <div class="news-item">
+        <img src="${a.image}">
+        <div>
+          <h3>${a.title}</h3>
+          <p>${a.description || ""}</p>
         </div>
-      </a>
+      </div>
     `;
   });
+  document.getElementById("news-list").innerHTML = news;
 
-  document.getElementById("news-list").innerHTML = listHTML;
+  // 🔥 5. Cột phải (Xem nhiều)
+  let hot = "";
+  list.slice(0, 5).forEach((a) => {
+    hot += `
+      <div class="hot-item">
+        <img src="${a.image}">
+        <p>${a.title}</p>
+      </div>
+    `;
+  });
+  document.getElementById("hot-news").innerHTML = hot;
 }
 loadActivities();
