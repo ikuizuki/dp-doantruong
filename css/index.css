@@ -13,7 +13,7 @@ body {
   text-align: center;
   overflow: hidden;
 }
-#pic-anim {
+.pic-anim {
   position: relative;
   height: 250px;
 

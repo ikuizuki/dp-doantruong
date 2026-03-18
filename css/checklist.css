@@ -159,3 +159,11 @@ footer {
 .user-box button:hover {
   background: #e60000;
 }
+/* giới hạn chữ */
+.activity-right p {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
